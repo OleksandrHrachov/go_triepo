@@ -41,18 +41,16 @@
         background-position: top;
 
         &-img-wrapper {
-          position: absolute;
-          right: 0;
+          top: 0;
           left: 0;
-          bottom: 25px;
+          right: 0;
           max-width: 1440px;
+          height: 951px;
           width: 100%;
-          display: flex;
-
-        }
-
-        &-img {
-          width: 100%;
+          z-index: -4;
+          background-image: url("../../images/top-image-2.png");
+          background-repeat: no-repeat;
+          background-position: top;
         }
       }
     }
