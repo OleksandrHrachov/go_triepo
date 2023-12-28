@@ -1,3 +1,123 @@
 .header {
-  
+  padding-top: 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  &__logo {
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &_nav {
+    display: flex;
+    gap: 80px;
+
+    &-link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+      text-transform: capitalize;
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 0%;
+        height: 4px;
+        background-color: $color-gray-C4;
+        z-index: 2;
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        border-radius: 10px;
+        transition: all 0.5s;
+      }
+
+      @include hover {
+        &:hover {
+          &::after {
+            content: "";
+            width: 100%;
+          }
+        }
+      }
+
+      &--active {
+        &::after {
+          content: "";
+          width: 75%;
+          height: 4px;
+          background-color: $color-gray-C4;
+          z-index: 2;
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+
+    &-item {
+      text-decoration: none;
+      color: #fff;
+      font-size: 15px;
+      position: relative;
+      white-space: nowrap
+    }
+
+    &-sign-up {
+      &::after {
+        content: "";
+        width: 0%;
+        height: 4px;
+        background-color: $color-gray-C4;
+        z-index: 2;
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        border-radius: 10px;
+        transition: all 0.5s;
+      }
+
+      @include hover {
+        &:hover {
+          &::after {
+            content: "";
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    &-login {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 128px;
+      height: 49px;
+      border-radius: 100px;
+      background: linear-gradient(
+          130deg,
+          $color-orange-light 15.57%,
+          $color-orange-dark 95.03%
+        ),
+        #fff;
+      transition: all 0.5s;
+
+      @include hover {
+        &:hover {
+          font-weight: 700;
+        }
+      }
+    }
+  }
 }

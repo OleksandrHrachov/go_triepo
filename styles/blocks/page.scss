@@ -2,6 +2,8 @@
   &__body {
     margin: 0;
     padding: 0;
+    background-color: $color-primary-background;
+    font-family: $fontMedium;
 
     * {
       margin: 0;
@@ -22,5 +24,9 @@
 
     display: flex;
     flex-direction: column;
+    background-image: url('../../images/top-bg.svg');
+    background-repeat: no-repeat;
+    background-position: top;
+    border-radius: 90px;
   }
 }
