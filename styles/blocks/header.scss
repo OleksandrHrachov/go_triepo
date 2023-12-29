@@ -4,9 +4,14 @@
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+  position: relative;
 
   @include onTablet {
     padding-top: 20px;
+  }
+
+  @include onSmallPhone {
+    padding-top: 40px;
   }
 
   &__logo {
@@ -14,6 +19,47 @@
     font-weight: 700;
     text-decoration: none;
     color: #fff;
+  }
+
+  &__menu {
+    &-btn {
+      display: none;
+
+      @include onTablet {
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 32px;
+        background: linear-gradient(
+          130deg,
+          $color-orange-light 15.57%,
+          $color-orange-dark 95.03%
+        );
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+
+        transition: all 0.5s;
+      }
+
+      &-img {
+        transform: rotate(-90deg);
+        width: 22px;
+        height: 22px;
+        transition: all 0.5s;
+      }
+
+      &-img--open {
+        transform: rotate(90deg);
+        width: 22px;
+        height: 22px;
+      }
+    }
   }
 
   &_nav {
@@ -24,12 +70,35 @@
       gap: 60px;
     }
 
+    @include onTablet {
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: -30px;
+      right: -30px;
+      padding-top: 70px;
+      height: 100vh;
+      background-color: $color-green-dark-05;
+      z-index: 2;
+      transform: translateY(-110%);
+      transition: all 0.5s;
+    }
+
+    &--open {
+      transform: translateY(0%);
+    }
+
     &-link {
       color: #fff;
       text-decoration: none;
       font-size: 15px;
       text-transform: capitalize;
       position: relative;
+
+      @include onTablet {
+        font-size: 24px;
+      }
 
       &::after {
         content: "";
@@ -79,7 +148,11 @@
       color: #fff;
       font-size: 15px;
       position: relative;
-      white-space: nowrap
+      white-space: nowrap;
+
+      @include onSmallPhone {
+        font-size: 12px;
+      }
     }
 
     &-sign-up {
@@ -114,12 +187,16 @@
       height: 49px;
       border-radius: 100px;
       background: linear-gradient(
-          130deg,
-          $color-orange-light 15.57%,
-          $color-orange-dark 95.03%
-        ),
-        #fff;
+        130deg,
+        $color-orange-light 15.57%,
+        $color-orange-dark 95.03%
+      );
       transition: all 0.5s;
+
+      @include onSmallPhone {
+        width: 100px;
+        height: 36px;
+      }
 
       @include hover {
         &:hover {
