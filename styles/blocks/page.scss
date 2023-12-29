@@ -5,12 +5,17 @@
     background-color: $color-primary-background;
     font-family: $fontMedium;
 
+    &--lock {
+      overflow: hidden;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
   }
+
 
   &__wrapper {
     position: relative;
