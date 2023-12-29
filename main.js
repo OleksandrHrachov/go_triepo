@@ -33,3 +33,5 @@ const swiper = new Swiper(".swiper", {
 
 });
 
+swiper.init();
+
