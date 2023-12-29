@@ -1,4 +1,4 @@
-[DEMO LINK]('https://oleksandrhrachov.github.io/go_triepo/')
+[DEMO LINK](https://oleksandrhrachov.github.io/go_triepo/)
 
 ## run the project locally
 
