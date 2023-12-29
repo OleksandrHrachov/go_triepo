@@ -5,6 +5,15 @@
   gap: 50px;
   position: relative;
 
+  @include onTablet {
+    margin-bottom: 100px;
+    flex-direction: column;
+  }
+
+  @include onPhone {
+    margin-bottom: 60px;
+  }
+
   &__content {
     color: $color-green-dark;
     font-weight: 600;
@@ -19,6 +28,14 @@
     &-title {
       font-size: 55px;
       margin-bottom: 15px;
+
+      @include onTablet {
+        font-size: 48px;
+      }
+
+      @include onPhone {
+        font-size: 36px;
+      }
     }
 
     &-description {
@@ -26,11 +43,17 @@
       font-weight: 500;
       margin-bottom: 60px;
       opacity: 0.5;
+
+      @include onPhone {
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
     }
 
     &-btn {
       display: block;
-      width: fit-content;
+      width: 230px;
+      text-align: center;
       text-decoration: none;
       color: $color-white-FE;
       font-size: 20px;
@@ -46,7 +69,7 @@
 
       @include hover {
         &:hover {
-          font-weight: 700;
+          font-family: "Poppins-Bold";
         }
       }
     }
@@ -60,17 +83,24 @@
     &-inner {
       position: absolute;
       .swiper {
-        &-wrapper {
-        }
 
         &-slide {
           width: 380px;
           height: 456px;
 
+          @include onPhone {
+            width: 300px;
+            height: 400px;
+          }
+
           &__inner {
             height: 456px;
             border-radius: 35px;
             overflow: hidden;
+
+            @include onPhone {
+              height: 400px;
+            }
           }
 
           img {
@@ -90,7 +120,11 @@
           width: 68px;
           height: 68px;
           border-radius: 50%;
-          background: linear-gradient(130deg, $color-orange-light 15.57%, $color-orange-dark 95.03%);
+          background: linear-gradient(
+            130deg,
+            $color-orange-light 15.57%,
+            $color-orange-dark 95.03%
+          );
         }
 
         .swiper-button-prev {

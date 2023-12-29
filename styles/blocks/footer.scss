@@ -5,16 +5,41 @@
   align-items: center;
   gap: 10px;
 
+  @include onTablet {
+    padding-bottom: 30px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
   &__logo {
     font-size: 20px;
     font-weight: 700;
     text-decoration: none;
     color: $color-orange;
+
+    @include onSmallPhone {
+      order: 0;
+    }
   }
 
   &_nav {
     display: flex;
     gap: 80px;
+
+    @include onDesktop {
+      gap: 60px;
+    }
+
+    @include onTablet {
+      gap: 40px;
+    }
+
+    @include onSmallPhone {
+      order: 3;
+      flex-direction: column;
+      align-self: flex-start;
+      gap: 20px;
+    }
 
     &-link {
       color: $color-green-dark;
@@ -65,8 +90,12 @@
 
   &__btns {
     display: flex;
-    gap: 66px;
+    gap: 25px;
     align-items: center;
+
+    @include onSmallPhone {
+      order: 2;
+    }
 
     &-item {
       text-decoration: none;

@@ -1,6 +1,15 @@
 .explore {
   padding: 86px 0 201px;
 
+  @include onTablet {
+    padding-top: 40px
+  }
+
+  @include onPhone {
+    padding-top: 120px;
+  padding-bottom: 230px;
+  }
+
   &__content {
     max-width: 605px;
     width: 100%;
@@ -14,12 +23,28 @@
       border-radius: 15px;
       margin-bottom: 7px;
       width: fit-content;
+
+      @include onPhone {
+        font-size: 14px;
+      }
+
+      @include onPhone {
+        margin-bottom: 20px;
+      }
     }
 
     &-title {
       font-size: 55px;
       font-weight: 600;
       margin-bottom: 30px;
+
+      @include onTablet {
+        font-size: 48px;
+      }
+
+      @include onPhone {
+        font-size: 36px;
+      }
     }
 
     &-description {
@@ -28,11 +53,17 @@
       margin-bottom: 68px;
       max-width: 520px;
       width: 100%;
+
+      @include onPhone {
+        font-size: 18px;
+        text-wrap: balance;
+      }
     }
 
     &-btn {
       display: block;
-      width: fit-content;
+      width: 270px;
+      text-align: center;
       text-decoration: none;
       color: $color-white-FE;
       font-size: 25px;
@@ -46,9 +77,13 @@
       );
       transition: all 0.5s;
 
+      @include onPhone {
+        font-size: 18px;
+      }
+
       @include hover {
         &:hover {
-          font-weight: 700;
+          font-family: "Poppins-Bold";
         }
       }
     }
